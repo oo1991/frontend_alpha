@@ -29,6 +29,10 @@ function App() {
   const nextSlide = () => setCurrent((current + 1) % screenshots.length)
   const prevSlide = () => setCurrent((current - 1 + screenshots.length) % screenshots.length)
 
+  const scrollToEarlyAccess = () => {
+    document.getElementById('early-access')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const email = e.target.elements.email.value
@@ -38,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <Nav />
+      <Nav onGetEarlyAccess={scrollToEarlyAccess} />
       <header className="text-center py-16 bg-gradient-to-r from-primary to-indigo-600 text-white">
         <Motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -65,12 +69,16 @@ function App() {
           Detect real-time buy/sell pressure across multiple timeframes.
           Understand when large traders move.
         </Motion.p>
-        <Button className="mt-4 bg-white text-primary hover:bg-white/90">
+        <Button
+          className="mt-4 bg-white text-primary hover:bg-white/90"
+          onClick={scrollToEarlyAccess}
+        >
           🔍 Get Early Access
         </Button>
       </header>
 
       <Motion.section
+        id="early-access"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
