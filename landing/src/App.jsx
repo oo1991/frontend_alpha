@@ -29,8 +29,9 @@ function App() {
   const nextSlide = () => setCurrent((current + 1) % screenshots.length)
   const prevSlide = () => setCurrent((current - 1 + screenshots.length) % screenshots.length)
 
-  const scrollToEarlyAccess = () => {
-    document.getElementById('early-access')?.scrollIntoView({ behavior: 'smooth' })
+  // Smoothly scroll to the end of the page
+  const scrollToBottom = () => {
+    document.getElementById('page-end')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const handleSubmit = (e) => {
@@ -42,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <Nav onGetEarlyAccess={scrollToEarlyAccess} />
+      <Nav onGetEarlyAccess={scrollToBottom} />
       <header className="text-center py-16 bg-gradient-to-r from-primary to-indigo-600 text-white">
         <Motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -71,7 +72,7 @@ function App() {
         </Motion.p>
         <Button
           className="mt-4 bg-white text-primary hover:bg-white/90"
-          onClick={scrollToEarlyAccess}
+          onClick={scrollToBottom}
         >
           🔍 Get Early Access
         </Button>
@@ -164,7 +165,7 @@ function App() {
         </form>
       </Motion.section>
 
-      <footer className="bg-gray-100 text-center py-8 mt-12">
+      <footer id="page-end" className="bg-gray-100 text-center py-8 mt-12">
         <p>
           Contact: <a href="mailto:support@flowglow.ai">support@flowglow.ai</a>
         </p>
