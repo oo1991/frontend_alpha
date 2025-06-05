@@ -1,5 +1,8 @@
 import { useState } from 'react'
-import './App.css'
+import { motion as Motion } from 'framer-motion'
+import Nav from './components/Nav'
+import { Button } from './components/ui/button'
+import { Input } from './components/ui/input'
 
 function App() {
   const screenshots = [
@@ -34,77 +37,132 @@ function App() {
   }
 
   return (
-    <div className="page">
-      <header className="hero">
-        <h1>BigGuys Volume Insights</h1>
-        <p>Track Big Player Activity in BTC and ETH Markets</p>
-        <button className="cta">Get Early Access</button>
+    <div>
+      <Nav />
+      <header className="text-center py-16">
+        <Motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl font-semibold mb-2"
+        >
+          BigGuys Volume Insights
+        </Motion.h1>
+        <Motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-gray-600"
+        >
+          Track Big Player Activity in BTC and ETH Markets
+        </Motion.p>
+        <Button className="mt-4">Get Early Access</Button>
       </header>
 
-      <section className="about">
-        <h2>What is BigGuys?</h2>
-        <p>
+      <Motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto py-12 px-4"
+      >
+        <h2 className="text-2xl font-semibold mb-4">What is BigGuys?</h2>
+        <p className="mb-4 text-gray-600">
           BigGuys is a smart volume analytics module built for crypto markets. It
           allows you to analyze who’s buying, who’s selling, how much, and when.
         </p>
-        <ul>
+        <ul className="list-disc space-y-2 ml-6 text-gray-600">
           <li>Filter by deal size, pair, timeframe and volume clusters.</li>
           <li>Detect liquidity imbalances and validate open interest.</li>
           <li>Strengthen entry/exit signals with smarter volume strategies.</li>
         </ul>
-      </section>
+      </Motion.section>
 
-      <section className="gallery">
-        <h2>Screenshots</h2>
-        <div className="slider">
-          <button onClick={prevSlide}>&lt;</button>
-          <div className="slide">
+      <Motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto py-12 px-4"
+      >
+        <h2 className="text-2xl font-semibold mb-4 text-center">Screenshots</h2>
+        <div className="flex items-center justify-center gap-4">
+          <Button variant="outline" size="icon" onClick={prevSlide}>
+            &lt;
+          </Button>
+          <div className="text-center">
             <img
+              className="rounded-md max-w-full"
               src={screenshots[current].src}
               alt={screenshots[current].caption}
             />
-            <p>{screenshots[current].caption}</p>
+            <p className="text-gray-600 mt-2">
+              {screenshots[current].caption}
+            </p>
           </div>
-          <button onClick={nextSlide}>&gt;</button>
+          <Button variant="outline" size="icon" onClick={nextSlide}>
+            &gt;
+          </Button>
         </div>
-      </section>
+      </Motion.section>
 
-      <section className="audience">
-        <h2>Who is it for?</h2>
-        <ul>
+      <Motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto py-12 px-4"
+      >
+        <h2 className="text-2xl font-semibold mb-4">Who is it for?</h2>
+        <ul className="list-disc ml-6 space-y-2 text-gray-600">
           <li>Crypto Traders</li>
           <li>Algo Strategy Developers</li>
           <li>Bot Builders</li>
           <li>On-chain &amp; Volume Analysts</li>
         </ul>
-      </section>
+      </Motion.section>
 
-      <section className="signup">
-        <h2>Be First to Try BigGuys</h2>
-        <p>
+      <Motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto py-12 px-4 text-center"
+      >
+        <h2 className="text-2xl font-semibold mb-4">Be First to Try BigGuys</h2>
+        <p className="mb-4 text-gray-600">
           We’re launching a private alpha soon. Enter your email to get early
           access.
         </p>
-        <form onSubmit={handleSubmit}>
-          <input
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row items-center justify-center gap-2"
+        >
+          <Input
             type="email"
             name="email"
-            placeholder="your@email.com"
+            placeholder="you@example.com"
             required
+            className="w-64"
           />
-          <button type="submit">Request Access</button>
+          <Button type="submit">Request Access</Button>
         </form>
-      </section>
+      </Motion.section>
 
-      <footer>
+      <footer className="bg-gray-100 text-center py-8 mt-12">
         <p>
           Contact: <a href="mailto:support@flowglow.ai">support@flowglow.ai</a>
         </p>
-        <p>
-          <a href="#">Telegram</a> | <a href="#">Discord</a> |{' '}
-          <a href="#">LinkedIn</a>
+        <p className="mt-2">
+          <a href="#" className="text-primary hover:underline">
+            Telegram
+          </a>{' '}
+          |{' '}
+          <a href="#" className="text-primary hover:underline">
+            Discord
+          </a>{' '}
+          |{' '}
+          <a href="#" className="text-primary hover:underline">
+            LinkedIn
+          </a>
         </p>
-        <p>&copy; FlowGlow Analytics, 2025</p>
+        <p className="mt-2">&copy; FlowGlow Analytics, 2025</p>
       </footer>
     </div>
   )
