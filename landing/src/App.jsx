@@ -56,7 +56,18 @@ function App() {
         >
           Track Big Player Activity in BTC and ETH Markets
         </Motion.p>
-        <Button className="mt-4">Get Early Access</Button>
+        <Motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-gray-600 mt-2"
+        >
+          Detect real-time buy/sell pressure across multiple timeframes.
+          Understand when large traders move.
+        </Motion.p>
+        <Button className="mt-4 bg-white text-primary hover:bg-white/90">
+          🔍 Get Early Access
+        </Button>
       </header>
 
       <Motion.section
