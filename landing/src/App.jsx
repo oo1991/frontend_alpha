@@ -143,6 +143,54 @@ function App() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        className="max-w-3xl mx-auto py-12 px-4"
+      >
+        <h2 className="text-2xl font-semibold mb-4 text-center">FAQ</h2>
+        <div className="space-y-6 text-gray-600 max-w-3xl mx-auto">
+          <div>
+            <h3 className="font-semibold text-lg">What is BigGuys?</h3>
+            <p>
+              It’s a smart volume analytics tool that helps identify large buyer
+              and seller activity across multiple timeframes on BTC and ETH.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">
+              How is this different from TradingView volume?
+            </h3>
+            <p>
+              BigGuys separates buy/sell volume, highlights imbalances, and lets
+              you filter by trade size. It goes far beyond simple volume bars.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Is it free to use?</h3>
+            <p>
+              Yes, during the private alpha phase it’s completely free. Later
+              there will be a free tier and premium plans.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Do I need to connect my wallet?</h3>
+            <p>
+              No. BigGuys is a read-only analytics tool. No wallet, login, or
+              KYC is required.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Which markets are supported?</h3>
+            <p>
+              Currently BTCUSDT and ETHUSDT from Binance. More assets and
+              exchanges coming soon.
+            </p>
+          </div>
+        </div>
+      </Motion.section>
+
+      <Motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         className="max-w-3xl mx-auto py-12 px-4 text-center"
       >
         <h2 className="text-2xl font-semibold mb-4">Be First to Try BigGuys</h2>
