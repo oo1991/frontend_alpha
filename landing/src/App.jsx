@@ -39,7 +39,7 @@ function App() {
   return (
     <div>
       <Nav />
-      <header className="text-center py-16">
+      <header className="text-center py-16 bg-gradient-to-r from-primary to-indigo-600 text-white">
         <Motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
