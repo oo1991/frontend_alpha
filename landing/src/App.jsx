@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Nav onGetEarlyAccess={scrollToBottom} />
-      <header className="text-center py-16 bg-gradient-to-r from-primary to-indigo-600 text-white">
+      <header className="text-center py-16 bg-gradient-to-r from-primary to-indigo-600">
         <Motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
