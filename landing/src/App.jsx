@@ -7,19 +7,19 @@ import { Input } from './components/ui/input'
 function App() {
   const screenshots = [
     {
-      src: 'https://via.placeholder.com/600x350?text=Screenshot+1',
+      src: '/images/buy_sell.png',
       caption: 'Buy/Sell Volume Distribution Over Time',
     },
     {
-      src: 'https://via.placeholder.com/600x350?text=Screenshot+2',
+      src: '/images/imbalance.png',
       caption: 'Buyer/Seller Imbalance Zones',
     },
     {
-      src: 'https://via.placeholder.com/600x350?text=Screenshot+3',
+      src: '/images/trade_size.png',
       caption: 'Trade Size Histograms',
     },
     {
-      src: 'https://via.placeholder.com/600x350?text=Screenshot+4',
+      src: '/images/top_traders.png',
       caption: 'Top Buy/Sell Trade Tables',
     },
   ]
