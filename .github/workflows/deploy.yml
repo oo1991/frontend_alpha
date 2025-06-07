@@ -19,6 +19,17 @@ jobs:
         run: npm ci --prefix landing
       - name: Build
         run: npm run build --prefix landing
+      - name: debug
+        run: |
+          echo "HOST: $HOST"
+          echo "USER: $USER"
+          echo "PORT: $PORT"
+          echo "TARGET: $TARGET"
+        env:
+          HOST: ${{ secrets.EC2_HOST }}
+          USER: ${{ secrets.EC2_USER }}
+          PORT: ${{ secrets.EC2_PORT }}
+          TARGET: ${{ secrets.EC2_PATH }}
       - name: Deploy via SCP
         env:
           HOST: ${{ secrets.EC2_HOST }}
