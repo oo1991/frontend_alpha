@@ -51,7 +51,7 @@ function App() {
           viewport={{ once: true }}
           className="text-4xl font-semibold mb-2"
         >
-          BigGuys Volume Insights
+          BigGuys Volume Insightss
         </Motion.h1>
         <Motion.p
           initial={{ opacity: 0, y: 20 }}
