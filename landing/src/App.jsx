@@ -45,10 +45,14 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       })
-
+      
       if (statusRes.ok) {
-        setMessage('You are already subscribed.')
-        return
+        const statusData = await statusRes.json()
+        if (statusData.status === 'subscribed') {
+          setMessage('You are already subscribed.')
+          return
+        }
+        // If status is 'unsubscribed', continue with the subscription process
       }
     } catch (err) {
       console.error('Status check failed:', err)
