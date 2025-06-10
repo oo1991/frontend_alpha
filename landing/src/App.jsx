@@ -25,6 +25,7 @@ function App() {
   ]
 
   const [current, setCurrent] = useState(0)
+  const [message, setMessage] = useState('')
 
   const nextSlide = () => setCurrent((current + 1) % screenshots.length)
   const prevSlide = () => setCurrent((current - 1 + screenshots.length) % screenshots.length)
@@ -34,11 +35,43 @@ function App() {
     document.getElementById('page-end')?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const email = e.target.elements.email.value
-    console.log('Request access for:', email)
-    e.target.reset()
+
+    try {
+      const statusRes = await fetch('http://127.0.0.1:38291/status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      if (statusRes.ok) {
+        setMessage('You are already subscribed.')
+        return
+      }
+    } catch (err) {
+      console.error('Status check failed:', err)
+    }
+
+    try {
+      const subscribeRes = await fetch('http://127.0.0.1:38291/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      if (subscribeRes.ok) {
+        setMessage('Subscription successful!')
+        e.target.reset()
+      } else {
+        const data = await subscribeRes.json().catch(() => ({}))
+        setMessage(data.error || 'Failed to subscribe')
+      }
+    } catch (err) {
+      console.error('Subscribe failed:', err)
+      setMessage('Failed to subscribe')
+    }
   }
 
   return (
@@ -211,6 +244,9 @@ function App() {
           />
           <Button type="submit">Request Access</Button>
         </form>
+        {message && (
+          <p className="mt-2 text-primary dark:text-indigo-300">{message}</p>
+        )}
       </Motion.section>
 
       <footer id="page-end" className="bg-gray-100 dark:bg-gray-800 text-center py-8 mt-12">
