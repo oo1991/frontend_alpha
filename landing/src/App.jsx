@@ -40,7 +40,7 @@ function App() {
     const email = e.target.elements.email.value
 
     try {
-      const statusRes = await fetch('http://127.0.0.1:38291/status', {
+      const statusRes = await fetch('/api/status', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -59,7 +59,7 @@ function App() {
     }
 
     try {
-      const subscribeRes = await fetch('http://127.0.0.1:38291/subscribe', {
+      const subscribeRes = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
