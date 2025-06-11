@@ -255,7 +255,7 @@ function App() {
 
       <footer id="page-end" className="bg-gray-100 dark:bg-gray-800 text-center py-8 mt-12">
         <p className="dark:text-gray-400">
-          Contact: <a href="mailto:support@flowglow.ai">support@flowglow.ai</a>
+          Contact: <a href="mailto:support@flowglowanalytics.com">support@flowglowanalytics.com</a>
         </p>
         <p className="mt-2 dark:text-gray-400">
           <a href="#" className="text-primary hover:underline">
