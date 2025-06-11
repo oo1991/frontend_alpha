@@ -19,6 +19,8 @@ jobs:
         run: npm ci --prefix landing
       - name: Build
         run: npm run build --prefix landing
+      - name: Check if Google file is in dist
+        run: ls -al landing/dist
       - name: debug
         run: |
           echo "HOST: $HOST"
