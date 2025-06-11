@@ -259,15 +259,11 @@ function App() {
         </p>
         <p className="mt-2 dark:text-gray-400">
           <a href="#" className="text-primary hover:underline">
-            Telegram
+            Telegram (soon)
           </a>{' '}
           |{' '}
-          <a href="#" className="text-primary hover:underline">
-            Discord
-          </a>{' '}
-          |{' '}
-          <a href="#" className="text-primary hover:underline">
-            LinkedIn
+          <a href="https://x.com/FGAnalytics" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            Twitter
           </a>
         </p>
         <p className="mt-2 dark:text-gray-400">&copy; FlowGlow Analytics, 2025</p>
