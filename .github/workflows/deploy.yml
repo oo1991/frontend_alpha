@@ -42,7 +42,7 @@ jobs:
         run: |
           echo "$KEY" > key.pem
           chmod 600 key.pem
-          scp -o StrictHostKeyChecking=no -i key.pem -P ${PORT:-22} -r landing/dist/* "${USER}@${HOST}:${TARGET}"
+          scp -o StrictHostKeyChecking=no -i key.pem -P ${PORT:-22} -r landing/dist "${USER}@${HOST}:${TARGET}"
       - name: Move to Nginx
         env:
           HOST: ${{ secrets.EC2_HOST }}
@@ -50,7 +50,7 @@ jobs:
         run: |
           ssh -i key.pem -o StrictHostKeyChecking=no ${USER}@${HOST} << 'EOF'
             sudo rm -rf /var/www/html/*
-            sudo cp -r /home/ubuntu/landing/* /var/www/html/
+            sudo cp -r /home/ubuntu/landing/dist/* /var/www/html/
             sudo systemctl reload nginx
           EOF
 
