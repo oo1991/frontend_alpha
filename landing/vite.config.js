@@ -7,26 +7,15 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// https://vite.dev/config/
 export default defineConfig({
   root: "src",
   build: {
     target: "esnext",
-    rollupOptions: {
-      input: {
-        index:
-          path.resolve(
-            path.dirname(new URL(import.meta.url).pathname),
-            "src/Index.jsx",
-          ) + "?ssg-entry",
-      },
-    },
     outDir: "../dist",
   },
-  appType: "mpa",
+  appType: "spa", // SPA, не MPA
   plugins: [
     react(),
-    ssgPlugin(),
     viteStaticCopy({
       targets: [
         {
@@ -37,3 +26,33 @@ export default defineConfig({
     }),
   ],
 });
+// https://vite.dev/config/
+// export default defineConfig({
+//   root: "src",
+//   build: {
+//     target: "esnext",
+//     rollupOptions: {
+//       input: {
+//         index:
+//           path.resolve(
+//             path.dirname(new URL(import.meta.url).pathname),
+//             "src/Index.jsx",
+//           ) + "?ssg-entry",
+//       },
+//     },
+//     outDir: "../dist",
+//   },
+//   appType: "mpa",
+//   plugins: [
+//     react(),
+//     ssgPlugin(),
+//     viteStaticCopy({
+//       targets: [
+//         {
+//           src: path.resolve(__dirname, "public/googlecc5376caf5e1ca32.html"),
+//           dest: ".",
+//         },
+//       ],
+//     }),
+//   ],
+// });
