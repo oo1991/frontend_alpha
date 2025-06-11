@@ -1,7 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { ssgPlugin } from "@wroud/vite-plugin-ssg";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -20,5 +24,16 @@ export default defineConfig({
     outDir: "../dist",
   },
   appType: "mpa",
-  plugins: [react(), ssgPlugin()],
+  plugins: [
+    react(),
+    ssgPlugin(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: path.resolve(__dirname, "public/googlecc5376caf5e1ca32.html"),
+          dest: ".",
+        },
+      ],
+    }),
+  ],
 });
