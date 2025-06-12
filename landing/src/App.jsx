@@ -94,7 +94,7 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-gray-600 dark:text-gray-400"
+          className="text-gray-600 text-white dark:text-gray-400"
         >
           Track Big Player Activity in BTC and ETH Markets
         </Motion.p>
@@ -102,7 +102,7 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-gray-600 dark:text-gray-400 mt-2"
+          className="text-gray-600 text-white dark:text-gray-400 mt-2"
         >
           Detect real-time buy/sell pressure across multiple timeframes.
           Understand when large traders move.
