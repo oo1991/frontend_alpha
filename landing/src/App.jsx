@@ -129,7 +129,7 @@ function App() {
         </p>
         <ul className="list-disc space-y-2 ml-6 text-gray-600 dark:text-gray-400">
           <li>Filter by deal size, pair, timeframe and volume clusters.</li>
-          <li>Detect liquidity imbalances and validate open interest.</li>
+          <li>Detect liquidity imbalances and volume anomalies.</li>
           <li>Support your research with advanced volume insights.</li>
         </ul>
       </Motion.section>
