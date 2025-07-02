@@ -258,8 +258,13 @@ function App() {
           Contact: <a href="mailto:support@flowglowanalytics.com">support@flowglowanalytics.com</a>
         </p>
         <p className="mt-2 dark:text-gray-400">
-          <a href="#" className="text-primary hover:underline">
-            Telegram (soon)
+          <a
+            href="https://t.me/FGAnalytics"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 dark:text-gray-400 hover:underline"
+          >
+            Telegram (Coming soon)
           </a>{' '}
           |{' '}
           <a href="https://x.com/FGAnalytics" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
