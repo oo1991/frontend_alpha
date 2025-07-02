@@ -267,6 +267,11 @@ function App() {
           </a>
         </p>
         <p className="mt-2 dark:text-gray-400">&copy; FlowGlow Analytics, 2025</p>
+        <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+          FlowGlow Analytics is an analytics platform only. We do not provide
+          financial or investment advice. Use analytics at your own discretion.
+          Trading cryptocurrencies carries risk.
+        </p>
       </footer>
     </div>
   )
