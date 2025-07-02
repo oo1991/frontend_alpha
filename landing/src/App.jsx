@@ -217,7 +217,7 @@ function App() {
           <div>
             <h3 className="font-semibold text-lg">Which markets are supported?</h3>
             <p>
-              Currently BTCUSDT and ETHUSDT from Binance. More assets and
+              Currently, BTC & ETH markets are supported. More assets and
               exchanges coming soon.
             </p>
           </div>
